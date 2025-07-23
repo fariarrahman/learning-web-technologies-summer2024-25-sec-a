@@ -1,0 +1,31 @@
+
+table {
+    width: 50%; 
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 10px;
+}
+.header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.footer {
+    text-align: center;
+    font-size: 14px;
+}
+.sidebar a, .external-links a {
+    display: block;
+    margin-bottom: 10px;
+}
+.bold {
+    font-weight: bold;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+}
