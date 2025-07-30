@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Gender Validation</title>
+</head>
+<body>
+
+    <form id="genderForm">
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+        <hr><button type="submit">Submit</button></hr>
+    </form>
+    <div id="genderError" style="color:red;"></div>
+
+    <script>
+       
+        document.getElementById('genderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+          
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var errorMessage = '';
+
+           
+            if (!gender) {
+                errorMessage = 'At least one gender option has to be selected';
+            }
+
+            
+            if (errorMessage) {
+                document.getElementById('genderError').innerText = errorMessage;
+            } else {
+                document.getElementById('genderError').innerText = '';
+                alert('Gender is valid!');
+            }
+        });
+    </script>
+</body>
+</html>

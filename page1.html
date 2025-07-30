@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Name Validation</title>
+</head>
+<body>
+    <form id="nameForm">
+        <label><b>Name:</b></label><br>
+        <input type="text" id="nameInput" placeholder="Enter your name"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        
+        const nameForm = document.getElementById("nameForm");
+        const nameInput = document.getElementById("nameInput");
+
+    
+        nameForm.onsubmit = function(event) {
+            event.preventDefault();  
+
+           
+            const name = nameInput.value.trim(); 
+         
+
+            if (name === "") {
+                alert("Name cannot be empty!");
+                return;
+            }
+
+            
+            const words = name.split(" ");
+            if (words.length < 2) {
+                alert("Name must contain at least two words.");
+                return;
+            }
+
+         
+            const firstChar = name.charAt(0);
+            if (!(firstChar >= 'A' && firstChar <= 'Z') && !(firstChar >= 'a' && firstChar <= 'z')) {
+                alert("Name must start with a letter.");
+                return;
+            }
+
+            
+            for (let i = 0; i < name.length; i++) {
+                const char = name.charAt(i);
+                if (!((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || char === ' ' || char === '.' || char === '-')) {
+                    alert("Name can only contain letters, spaces, dots, and dashes.");
+                    return;
+                }
+            }
+
+           
+            alert("Name is valid!");
+        };
+    </script>
+</body>
+</html>

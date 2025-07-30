@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gender and Date of Birth Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>4. Date of Birth</h2>
+    <form id="dobForm">
+        <input type="number" id="day" placeholder="Day" min="1" max="31">
+        <input type="number" id="month" placeholder="Month" min="1" max="12">
+        <input type="number" id="year" placeholder="Year" min="1900" max="2016">
+        <div id="dobError" class="error"></div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+       
+        document.getElementById('dobForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var day = document.getElementById('day').value;
+            var month = document.getElementById('month').value;
+            var year = document.getElementById('year').value;
+            var dobError = document.getElementById('dobError');
+
+            // Validation rules for Date of Birth
+            if (!day || !month || !year) {
+                dobError.innerText = 'Date of birth cannot be empty';
+            } else if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2016) {
+                dobError.innerText = 'Please enter a valid date of birth';
+            } else {
+                dobError.innerText = '';
+                alert('Date of birth is valid!');
+            }
+        });
+    </script>
+</body>
+</html>

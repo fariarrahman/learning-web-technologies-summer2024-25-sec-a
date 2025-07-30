@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Email Validation</title>
+</head>
+<body>
+   
+    <form id="emailForm">
+        <label><b>Email:</b></label><br>
+        <input type="text" id="emailInput" placeholder="Enter your email"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        
+        const emailForm = document.getElementById("emailForm");
+        const emailInput = document.getElementById("emailInput");
+
+       
+        emailForm.onsubmit = function(event) {
+            event.preventDefault(); 
+
+            //email input
+            const email = emailInput.value
+
+            // Check if the email is empty
+            if (email === "") {
+                alert("Email cannot be empty!");
+                return;
+            }
+
+            //Check if the email contains the "@" symbol and a dot (.)
+            let atSymbolFound = false;
+            let dotSymbolFound = false;
+            for (let i = 0; i < email.length; i++) {
+                const char = email.charAt(i);
+                if (char === "@") {
+                    atSymbolFound = true;
+                }
+                if (char === ".") {
+                    dotSymbolFound = true;
+                }
+            }
+
+            if (!atSymbolFound || !dotSymbolFound) {
+                alert("Please enter a valid email address (e.g., example@example.com).");
+                return;
+            }
+
+            // Check if the email starts with a letter
+            const firstChar = email.charAt(0);
+            if (!(firstChar >= 'A' && firstChar <= 'Z') && !(firstChar >= 'a' && firstChar <= 'z')) {
+                alert("Email must start with a letter.");
+                return;
+            }
+
+        
+            alert("Email is valid!");
+        };
+    </script>
+</body>
+</html>

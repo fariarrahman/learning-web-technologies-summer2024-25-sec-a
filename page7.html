@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User ID and Profile Picture Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>7. Profile Picture and User ID</h2>
+    <form id="profilePictureForm">
+     
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" placeholder="Enter User ID">
+        <div id="userIdError" class="error"></div>
+
+        
+        <label for="profilePicture">Profile Picture:</label>
+        <input type="file" id="profilePicture" accept="image/*">
+        <div id="profilePictureError" class="error"></div>
+
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        
+        document.getElementById('profilePictureForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var userId = document.getElementById('userId').value;
+            var file = document.getElementById('profilePicture').files[0];
+            var userIdError = document.getElementById('userIdError');
+            var profilePictureError = document.getElementById('profilePictureError');
+
+           
+            userIdError.innerText = '';
+            profilePictureError.innerText = '';
+
+            // check if id empty
+            if (!userId) {
+                userIdError.innerText = 'User ID is required';
+            }
+
+            //check if no file is selected
+            if (!file) {
+                profilePictureError.innerText = 'Please select a profile picture';
+            }
+
+           
+           
+        });
+    </script>
+
+</body>
+</html>
