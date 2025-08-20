@@ -25,6 +25,8 @@
     <?php 
         // Corrected function name and superglobal variable case
         print_r($_POST);
+print_r($_POST["name"]);
     ?>
 </body>
 </html>
+
