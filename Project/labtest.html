@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Test</title>
+  <link rel="stylesheet" href="background.css">
+  <style>
+    .lab-box {
+      background: #fff5e6;
+      padding: 25px;
+      border-radius: 12px;
+      width: 350px;
+      text-align: center;
+    }
+    input { width: 90%; margin: 6px; padding: 8px; }
+    button { background: orange; color: white; border: none; padding: 8px; width: 100%; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="lab-box">
+    <h2>Lab Test Order</h2>
+    <input type="text" id="pid" placeholder="Patient ID">
+    <input type="text" id="test" placeholder="Test Name">
+    <button onclick="order()">Order</button>
+    <p id="res"></p>
+  </div>
+<script>
+function order(){
+  let p=document.getElementById("pid").value;
+  let t=document.getElementById("test").value;
+  if(p===""||t===""){alert("Fill all!");return;}
+  document.getElementById("res").innerText="Lab Test Ordered for "+p+" : "+t;
+}
+</script>
+</body>
+</html>

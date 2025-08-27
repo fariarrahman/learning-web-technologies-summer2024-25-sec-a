@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Appointments</title>
+  <link rel="stylesheet" href="background.css">
+  <style>
+    .appt-box {
+      background: #fefefe;
+      padding: 20px;
+      border: 2px dashed #007bff;
+      border-radius: 12px;
+      text-align: center;
+      width: 350px;
+    }
+    input { width: 90%; margin: 5px; padding: 8px; }
+    button {
+      padding: 8px;
+      width: 100%;
+      margin-top: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="appt-box">
+    <h2>Schedule Appointment</h2>
+    <input type="text" id="aname" placeholder="Patient Name">
+    <input type="text" id="doc" placeholder="Doctor Name">
+    <input type="date" id="date">
+    <input type="time" id="time">
+    <button onclick="schedule()">Schedule</button>
+    <p id="res"></p>
+  </div>
+
+<script>
+function schedule(){
+  let n=document.getElementById("aname").value;
+  let d=document.getElementById("doc").value;
+  let dt=document.getElementById("date").value;
+  let t=document.getElementById("time").value;
+  if(n===""||d===""||dt===""||t===""){alert("Fill all!");return;}
+  document.getElementById("res").innerText="Appointment: "+n+" with "+d+" on "+dt+" at "+t;
+}
+</script>
+</body>
+</html>

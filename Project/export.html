@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Export Data</title>
+  <link rel="stylesheet" href="background.css">
+  <style>
+    .export-box {
+      background: #e6f7ff;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      width: 350px;
+    }
+    button {
+      margin: 8px;
+      padding: 10px;
+      width: 90%;
+      background: teal;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="export-box">
+    <h2>Export Data</h2>
+    <button onclick="exportCSV()">Export Billing Data (CSV)</button>
+    <button onclick="exportPDF()">Export PDF (Demo)</button>
+    <p id="res"></p>
+  </div>
+
+<script>
+function exportCSV(){
+  let data="PatientID,Name,Days,Total\n101,Demo,3,4500\n";
+  let link=document.createElement("a");
+  link.setAttribute("href","data:text/csv;charset=utf-8,"+data);
+  link.setAttribute("download","data.csv");
+  link.click();
+}
+function exportPDF(){
+  alert("PDF Export (Demo). In real app, we generate PDF here.");
+}
+</script>
+</body>
+</html>
