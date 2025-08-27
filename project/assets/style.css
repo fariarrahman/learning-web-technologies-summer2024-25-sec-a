@@ -1,0 +1,72 @@
+/* Shared UI styles for forms and buttons */
+.sidebar {
+  width: 220px;
+  background: #007bff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+  background: #0056b3;
+  text-align: center;
+}
+
+.sidebar a:hover { background: #003f7f; }
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+  width: 400px;
+  text-align: center;
+}
+
+input, select, textarea, button {
+  width: 95%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+button {
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #218838;
+}
+
+.result {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #eaf7ea;
+  font-weight: bold;
+  color: green;
+  display: none;
+}

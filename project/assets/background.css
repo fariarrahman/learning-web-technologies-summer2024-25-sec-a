@@ -1,0 +1,17 @@
+
+/* background.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Background design */
+  background: linear-gradient(to right, #d9a7c7, #fffcdc);
+
+  /* Flexbox to center content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh; /* full screen height */
+}
