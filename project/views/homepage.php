@@ -1,28 +1,42 @@
-<?php
-// Dashboard for BD Hospital Receptionist
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>BD Hospital - Receptionist Dashboard</title>
-  <link rel="stylesheet" href="../assets/background.css">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="sidebar">
-    <h2>BD Hospital</h2>
-    <a href="billing.php">Billing & Insurance</a>
-    <a href="appointments.php">Appointments</a>
-    <a href="lab.php">Lab Test Order</a>
-    <a href="export.php">Data Export</a>
+  
+  <!-- Top Hospital Brand -->
+  <div class="nav-brand">
+    <i class="fas fa-hospital-alt"></i>
+    <span>BD Hospital</span>
   </div>
 
-  <div class="main-content">
-    <div class="form-box">
-      <h1>Welcome to BD Hospital Reception</h1>
-      <p>Select a module from the sidebar to manage hospital operations.</p>
-    </div>
+  <!-- Layout wrapper -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="billing.php"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="insurance.php"><i class="fas fa-shield-alt"></i> Insurance</a></li>
+        <li><a href="claims.php"><i class="fas fa-clipboard-list"></i> Claims</a></li>
+        <li><a href="appointment.php"><i class="fas fa-calendar-check"></i> Appointment</a></li>
+        <li><a href="labtest.php"><i class="fas fa-vials"></i> Lab Test</a></li>
+        <li><a href="export.php"><i class="fas fa-file-export"></i> Export</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1>Welcome to BD Hospital Reception System</h1>
+      <p>Select a feature from the sidebar to get started.</p>
+    </main>
+
   </div>
+
 </body>
 </html>
